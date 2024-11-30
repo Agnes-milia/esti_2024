@@ -17,4 +17,9 @@ class Copy extends Model
         'book_id',
         'user_id',
     ];
+
+    public function copiesToLendings(){
+        //model neve, honnan, hová
+        return $this->hasMany(Lending::class, "copy_id", "copy_id");
+    }
 }

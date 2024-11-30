@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class BookController extends Controller
@@ -44,5 +45,13 @@ class BookController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    //lekérdezések
+    public function booksWithCopies(){
+        $records = Book::with('booksToCopies')
+        ->get();
+
+        return $records;
     }
 }

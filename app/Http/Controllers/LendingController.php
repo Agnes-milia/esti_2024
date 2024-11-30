@@ -51,4 +51,12 @@ class LendingController extends Controller
         ->get();
         return $records;
     }
+
+    public function lendingWithUsers($date){
+        $records = Lending::with('lendingtoUsers')
+        ->where('start', '=', $date)
+        ->get();
+
+        return $records;
+    }
 }

@@ -30,4 +30,9 @@ class Lending extends Model
         return $this->belongsTo(Copy::class, "copy_id", "copy_id");
     }
 
+    public function lendingtoUsers(){
+        //model neve, honnan, hová
+        return $this->belongsTo(User::class, "user_id", "id");
+    }
+
 }
