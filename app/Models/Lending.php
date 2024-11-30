@@ -25,4 +25,9 @@ class Lending extends Model
         return $query;
     }
 
+    public function toCopies(){
+        //model neve, honnan, hová
+        return $this->belongsTo(Copy::class, "copy_id", "copy_id");
+    }
+
 }

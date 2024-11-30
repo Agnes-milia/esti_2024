@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lending;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LendingController extends Controller
 {
@@ -34,5 +35,20 @@ class LendingController extends Controller
 
     public function destroy($user_id, $copy_id, $start){
         $this->show($user_id, $copy_id, $start)->delete();
+    }
+
+    //összes kölcsönzési adatok a példányok adataival
+    public function lendingsWithCopies(){
+        $records = Lending::with('toCopies')->get();
+        return $records;
+    }
+
+    //bejelentkezett felhasználó összes kölcsönzési adatai a példányok adataival
+    public function userLendingsWithCopies(){
+        $user = Auth::user();
+        $records = Lending::with('toCopies')
+        ->where('user_id', $user->id)
+        ->get();
+        return $records;
     }
 }
