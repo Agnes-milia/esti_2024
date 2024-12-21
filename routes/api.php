@@ -19,6 +19,7 @@ Route::post('/login',[AuthenticatedSessionController::class, 'store']);
 Route::middleware(['auth:sanctum'])
 ->group(function () {
     Route::get('/user-lendings-with-copies', [LendingController::class, 'userLendingsWithCopies']);
+    Route::get('/lending-count', [LendingController::class, 'lendingCount']);
     // Kijelentkezés útvonal
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 });

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Lending;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LendingController extends Controller
 {
@@ -58,5 +59,16 @@ class LendingController extends Controller
         ->get();
 
         return $records;
+    }
+
+    //hány kölcsönzése van a bej-tt felh-nak?
+    public function lendingCount(){
+        //bej-tt felh-ó
+        $user = Auth::user();
+        $count = DB::table('lendings')
+        ->where("user_id", "=", $user->id)
+        ->count();
+
+        return $count;
     }
 }
