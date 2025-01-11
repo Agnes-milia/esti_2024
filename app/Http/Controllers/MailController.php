@@ -14,11 +14,15 @@ class MailController extends Controller
        $mailData = [
            'title' => 'Levél címe',
            'body' => 'Levél törzse'
-       ];       
-       Mail::to('kisp777777@gmail.com')
+       ];   
+
+       foreach(['laralaravelvel@gmail.com', '4brainnotfound04@gmail.com'] as $cim) {
+        Mail::to($cim)
         /* ->cc($moreUsers)
         ->bcc($evenMoreUsers) */
         ->send(new DemoMail($mailData));
+       }
+       
        dd("Email küldése sikeres.");
    }
 
