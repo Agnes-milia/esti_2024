@@ -1,0 +1,38 @@
+Cím;Rendező;Főszereplő;Év;Perc
+Hős;Yimou Zhang;Jet Li;2002;96
+V mint vérbosszú;James McTeigue;Natalie Portman;2005;135
+Veronica kettős élete;Krzysztof Kieslowski;Irene Jacob;1991;98
+Tűz van, babám!;Milos Forman;Jan Vostrcil;1967;71
+Az emlékek őre;Phillip Noyce;Brenton Thwaites;2014;97
+Három szín: Piros;Krzysztof Kieslowski;Irene Jacob;1994;96
+Macska-jaj;Emir Kusturica;Bajram Severdzan;1998;127
+Doktor Parnassus és a képzelet birodalma;Terry Gilliam;Heath Ledger;2009;117
+Galaxis útikalauz stopposoknak;Garth Jennings;Martin Freeman;2005;109
+Zuhanás;Tarsem Singh;Catinca Untaru;2006;117
+Cigányok ideje;Emir Kusturica;Nenad Janković;2008;106
+A rajzoló szerződése;Peter Greenaway;Anthony Higgins;1982;108
+Hair;Milos Forman;Treat Williams;1979;117
+A vihar kapujában;Akira Kurosawa;Toshirô Mifune;1950;83
+Ponyvaregény;Quentin Tarantino;John Travolta;1994;150
+Eredet;Christopher Nolan;Leonardi DiCaprio;2010;142
+Az élet szép;Roberto Benigni;Roberto Benigni;1997;122
+Brazil;Terry Gilliam;Robert de Niro;1985;140
+Tizenkét dühös ember;Sidney Lumet;Henry Fonda;1957;100
+Gyalog galopp;Terry Gilliam, Terry Jones;Graham Chapman;1975;92
+Harcosok klubja;David Fincher;Edward Norton;1999;139
+Brian élete;Terry Jones;Graham Chapman;1979;90
+12 majom;Terry Gilliam;Brad Pitt;1995;123
+A repülő tőrök klánja;Yimou Zhang;Takeshi Kaneshiro;2004;119
+Az élet egy csoda;Emir Kusturica;Slavko Štimac;2004;155
+Száll a kakukk fészkére;Milos Forman;Jack Nicholson;1975;130
+Blöff;Guy Ritchie;Brad Pitt;2000;104
+Lopakodó lelkek;Ki-duk Kim;Hyun-kyoon Lee;2004;88
+Tavasz, Nyár, Ősz, Tél... és Tavasz;Ki-duk Kim;Oh Yeong-su;2003;99
+Berlin felett az ég;Wim Wenders;Bruno Ganz;1987;130
+Annie Hall;Woody Allen;Diane Keaton;1977;93
+A lé meg a Lola;Tom Tykwer;Franka Potente;1998;90
+A hét szamuráj;Akira Kurosawa;Toshirô Mifune;1954;160
+Prospero könyvei;Peter Greenaway;Sir John Gielgud;1991;120
+A félkegyelmű;Akira Kurosawa;Yoshiko Kuga;1951;165
+Parfüm: Egy gyilkos története;Tom Tykwer;Ben Whishaw;2006;147
+Félelem és reszketés Las Vegasban;Terry Gilliam;Johnny Depp;1998;113

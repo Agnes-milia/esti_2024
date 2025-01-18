@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 
@@ -9,5 +10,10 @@ Route::get('/', function () {
 
 //levélküldés
 Route::get('send-mail', [MailController::class, 'index']);
+
+//fájl feltöltés
+Route::get('file-upload', [FileController::class, 'index']);
+Route::post('file-upload', [FileController::class, 'store'])->name('file.store');
+
 
 require __DIR__.'/auth.php';

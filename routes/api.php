@@ -20,6 +20,9 @@ Route::middleware(['auth:sanctum'])
 ->group(function () {
     Route::get('/user-lendings-with-copies', [LendingController::class, 'userLendingsWithCopies']);
     Route::get('/lending-count', [LendingController::class, 'lendingCount']);
+    Route::get('/lending-book-count', [LendingController::class, 'lendingBookCount']);
+    Route::get('/lending-count-with-me', [LendingController::class, 'lendingCountWithMe']);
+    Route::get('/lending-count-with-me2', [LendingController::class, 'lendingCountWithMe2']);
     // Kijelentkezés útvonal
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 });
