@@ -23,6 +23,7 @@ Route::middleware(['auth:sanctum'])
     Route::get('/lending-book-count', [LendingController::class, 'lendingBookCount']);
     Route::get('/lending-count-with-me', [LendingController::class, 'lendingCountWithMe']);
     Route::get('/lending-count-with-me2', [LendingController::class, 'lendingCountWithMe2']);
+    Route::get('/book-with-me', [LendingController::class, 'bookWithMe']);
     // Kijelentkezés útvonal
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy']);
 });

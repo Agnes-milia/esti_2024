@@ -93,7 +93,7 @@ class LendingController extends Controller
             COUNT(*)
             FROM lendings
             WHERE end is null
-            and user_id = '$user->id'");
+            and user_id = $user->id");
         
         return $count;
     }
@@ -109,5 +109,21 @@ class LendingController extends Controller
         ->count();
         
         return $count;
+    }
+
+    //Milyen könyvek vannak nálam? (szerző, cím, book_id)
+    public function bookWithMe(){
+        //bej-tt felh-ó
+        $user = Auth::user();
+        $records = DB::table('lendings as l')
+        //ha nincs select, akkor minden adattal visszatér
+        ->select('author', 'title')
+        ->join('copies as c', 'l.copy_id', 'c.copy_id')
+        ->join('books as b', 'c.book_id', 'b.book_id')
+        ->where("l.user_id", "=", $user->id)
+        ->whereNull('end')
+        ->get();
+
+        return $records;
     }
 }

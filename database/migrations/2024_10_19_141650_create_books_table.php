@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id('book_id');
             $table->string('author');
             $table->string('title');
-            $table->integer('pieces')->default(100);
             $table->timestamps();
         });
 
@@ -27,8 +26,8 @@ return new class extends Migration
 
         Book::create([
             'author' => 'Olga Tokarczuk', 
-            'title' => 'Nyughatatlanok',
-            'pieces' => 200
+            'title' => 'Nyughatatlanok'
+   
         ]);
     }
 
