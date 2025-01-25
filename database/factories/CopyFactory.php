@@ -21,6 +21,7 @@ class CopyFactory extends Factory
         return [
             'user_id' => User::all()->random()->id,
             'book_id' => Book::all()->random()->book_id,
+            'status' => rand(0, 2)
         ];
     }
 }

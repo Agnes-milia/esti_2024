@@ -14,6 +14,8 @@ return new class extends Migration
     {
         Schema::create('copies', function (Blueprint $table) {
             $table->id('copy_id');
+            //0: konyvtarban, 1: felh-nál, 2: selejtes
+            $table->smallInteger('status')->default(0);
             $table->foreignId('book_id')->references('book_id')->on('books');
             $table->foreignId('user_id')->references('id')->on('users');
             $table->timestamps();

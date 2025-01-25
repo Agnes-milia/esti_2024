@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('lendings', function (Blueprint $table) {
             $table->primary(['user_id', 'copy_id', 'start']);
-            $table->foreignId('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id')->default(1);
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreignId('copy_id')->references('copy_id')->on('copies');
             $table->date('start')->default(now());
             $table->date('end')->nullable();

@@ -16,6 +16,7 @@ class Copy extends Model
     protected $fillable = [
         'book_id',
         'user_id',
+        "status"
     ];
 
     public function copiesToLendings(){

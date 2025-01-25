@@ -6,6 +6,7 @@ use App\Models\Lending;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\CallLike;
 
 class LendingController extends Controller
 {
@@ -25,6 +26,17 @@ class LendingController extends Controller
     public function store(Request $request){
         $record = new Lending();
         $record->fill($request->all());
+        $record->save();
+    }
+
+    public function storeAuth(Request $request){
+        $user = Auth::user();
+        $record = new Lending();
+        $record->user_id = $user->id;
+        $record->copy_id = $request->copy_id;
+        $record->start = date(now());
+        $record->warning = 0;
+        $record->extension = 0;
         $record->save();
     }
 
@@ -125,5 +137,31 @@ class LendingController extends Controller
         ->get();
 
         return $records;
+    }
+
+    public function bringBack($copy_id, $start){
+        $user = Auth::user();
+        $record = $this->show($user->id, $copy_id, $start);
+        $record->end = date(now());
+        $record->save();
+        //másik esemény
+        DB::table('copies')
+        ->where('copy_id', $copy_id)
+        //0: könyvtárban, 1: felh-nál, 2: selejtes
+        ->update(['status' => 0]);
+    }
+
+    public function bringBack2($copy_id, $start){
+        $user = Auth::user();
+        $record = $this->show($user->id, $copy_id, $start);
+        $record->end = date(now());
+        $record->save();
+        //másik esemény
+        /* DB::table('copies')
+        ->where('copy_id', $copy_id)
+        //0: könyvtárban, 1: felh-nál, 2: selejtes
+        ->update(['status' => 0]); */
+        //eljárással, mindig DB::select
+        DB::select('CALL toStore(?)', [$copy_id]);
     }
 }
